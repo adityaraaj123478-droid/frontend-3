@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+
+  --color-teal-500: #14B8A6;
+  --color-coral-500: #FF7F6A;
+  --color-navy-900: #0F172A;
+  --color-cream: #F8FAFC;
+  --color-dark-bg: #020617;
+  --color-dark-card: #0F172A;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans antialiased bg-[#F8FAFC] text-[#0F172A] transition-colors duration-300;
+  }
+
+  /* Dark mode overrides */
+  html.dark body {
+    @apply bg-[#020617] text-[#F8FAFC];
+  }
+}
+
+@layer utilities {
+  .text-gradient-teal {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#14B8A6] to-[#0F766E];
+  }
+
+  .text-gradient-coral {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#FF7F6A] to-[#FDBA74];
+  }
+
+  .bg-gradient-teal {
+    @apply bg-gradient-to-br from-[#14B8A6] to-[#0F766E];
+  }
+
+  .glassmorphism {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-lg dark:bg-[#0F172A]/70 dark:border-white/10;
+  }
+  
+  .glassmorphism-card {
+    @apply bg-white/90 backdrop-blur-sm border border-white/30 shadow-xl dark:bg-[#0F172A]/90 dark:border-white/10;
+  }
+}
