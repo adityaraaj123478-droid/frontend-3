@@ -38,19 +38,20 @@ const Counter = ({ from = 0, to, duration = 2 }) => {
 };
 
 const Impact = () => {
+  // Stats adjusted based on NayePankh's operational numbers
   const stats = [
-    { value: 5000, suffix: "+", label: "Women Empowered", color: "teal" },
-    { value: 200, suffix: "+", label: "Active Volunteers", color: "coral" },
-    { value: 50, suffix: "+", label: "Communities Supported", color: "teal" },
-    { value: 100, suffix: "+", label: "Educational Programs", color: "coral" },
+    { value: 200000, suffix: "+", label: "Lives Impacted", color: "blue" },
+    { value: 1000, suffix: "+", label: "Youth Team Members", color: "orange" },
+    { value: 12, suffix: "A", label: "Income Tax Certified", color: "blue" },
+    { value: 80, suffix: "G", label: "Donor Tax Exemption", color: "orange" },
   ];
 
   return (
     <section id="impact" className="py-20 relative bg-gradient-to-r from-[#0F172A] to-[#1e293b] overflow-hidden">
-      {/* Decorative patterns */}
-      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#14B8A6_1px,transparent_1px)] [background-size:30px_30px]"></div>
-      <div className="absolute top-0 right-0 w-64 h-64 bg-[#14B8A6] opacity-20 blur-[100px] rounded-full"></div>
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#FF7F6A] opacity-20 blur-[100px] rounded-full"></div>
+      {/* Dynamic ambient background patterns */}
+      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#0EA5E9_1px,transparent_1px)] [background-size:30px_30px]"></div>
+      <div className="absolute top-0 right-0 w-64 h-64 bg-[#0EA5E9] opacity-15 blur-[100px] rounded-full"></div>
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#F97316] opacity-15 blur-[100px] rounded-full"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
@@ -60,7 +61,7 @@ const Impact = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-poppins font-bold text-white mb-4"
           >
-            Our Impact in <span className="text-[#14B8A6]">Numbers</span>
+            Our Impact in <span className="text-[#0EA5E9]">Numbers</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -69,7 +70,7 @@ const Impact = () => {
             transition={{ delay: 0.1 }}
             className="text-gray-300 text-lg max-w-2xl mx-auto"
           >
-            Real change is measurable. Together, we've made significant strides towards a more equitable world.
+            Real change is built on relentless hustle. Here is how our youth-led movement is reshaping realities.
           </motion.p>
         </div>
 
@@ -81,19 +82,23 @@ const Impact = () => {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative group rounded-2xl p-[1px] bg-gradient-to-b from-white/10 to-transparent hover:from-[#14B8A6]/50 transition-colors duration-500"
+              className={`relative group rounded-2xl p-[1px] bg-gradient-to-b from-white/10 to-transparent transition-colors duration-500 ${
+                stat.color === 'blue' ? 'hover:from-[#0EA5E9]/50' : 'hover:from-[#F97316]/50'
+              }`}
             >
               <div className="bg-[#0F172A]/80 backdrop-blur-sm p-8 rounded-2xl h-full flex flex-col items-center justify-center text-center transform transition-transform duration-300 group-hover:-translate-y-2">
-                <div className={`text-4xl md:text-5xl font-bold font-poppins mb-2 ${
-                  stat.color === 'teal' ? 'text-gradient-teal drop-shadow-[0_0_10px_rgba(20,184,166,0.3)]' : 'text-gradient-coral drop-shadow-[0_0_10px_rgba(255,127,106,0.3)]'
+                <div className={`text-3xl md:text-5xl font-bold font-poppins mb-2 tracking-tight ${
+                  stat.color === 'blue' 
+                    ? 'text-[#0EA5E9] drop-shadow-[0_0_10px_rgba(14,165,233,0.3)]' 
+                    : 'text-[#F97316] drop-shadow-[0_0_10px_rgba(249,115,22,0.3)]'
                 }`}>
                   <Counter to={stat.value} />{stat.suffix}
                 </div>
-                <p className="text-gray-300 font-medium">{stat.label}</p>
+                <p className="text-gray-300 font-medium text-sm md:text-base">{stat.label}</p>
                 
-                {/* Glow effect on hover */}
-                <div className={`absolute -inset-1 rounded-2xl opacity-0 group-hover:opacity-20 blur-lg transition-opacity duration-500 -z-10 ${
-                  stat.color === 'teal' ? 'bg-[#14B8A6]' : 'bg-[#FF7F6A]'
+                {/* Visual glow backdrop layers on hover */}
+                <div className={`absolute -inset-1 rounded-2xl opacity-0 group-hover:opacity-15 blur-lg transition-opacity duration-500 -z-10 ${
+                  stat.color === 'blue' ? 'bg-[#0EA5E9]' : 'bg-[#F97316]'
                 }`}></div>
               </div>
             </motion.div>

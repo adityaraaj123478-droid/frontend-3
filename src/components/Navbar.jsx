@@ -50,28 +50,28 @@ const Navbar = () => {
     <nav className={`fixed w-full z-40 transition-all duration-300 ${scrolled ? 'glassmorphism py-3' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          {/* Logo */}
+          {/* Brand Logo Container */}
           <div className="flex-shrink-0 flex items-center">
             <a href="#home" className="text-2xl font-poppins font-bold flex items-center gap-2">
-              <span className="text-[#14B8A6] text-3xl">✽</span>
-              <span className="dark:text-white">She Can</span>
+              <span className="text-[#0EA5E9] text-3xl" role="img" aria-label="wing">🪶</span>
+              <span className="dark:text-white text-[#0F172A]">NayePankh</span>
             </a>
           </div>
 
-          {/* Desktop Menu */}
+          {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-[#0F172A] dark:text-[#F8FAFC] hover:text-[#14B8A6] dark:hover:text-[#14B8A6] font-medium transition-colors duration-200"
+                className="text-[#0F172A] dark:text-[#F8FAFC] hover:text-[#0EA5E9] dark:hover:text-[#0EA5E9] font-medium transition-colors duration-200"
               >
                 {link.name}
               </a>
             ))}
           </div>
 
-          {/* Actions */}
+          {/* Right Action Items */}
           <div className="hidden md:flex items-center space-x-4">
             <button
               onClick={toggleDarkMode}
@@ -82,23 +82,25 @@ const Navbar = () => {
             </button>
             <a
               href="#donate"
-              className="bg-[#FF7F6A] hover:bg-[#ff6850] text-white px-6 py-2.5 rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+              className="bg-[#F97316] hover:bg-[#ea580c] text-white px-6 py-2.5 rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
             >
               Donate Now
             </a>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile UI Interactive Toggles */}
           <div className="md:hidden flex items-center space-x-4">
             <button
               onClick={toggleDarkMode}
               className="p-2 text-[#0F172A] dark:text-[#F8FAFC]"
+              aria-label="Toggle Dark Mode Mobile"
             >
               {darkMode ? <HiSun className="w-5 h-5" /> : <HiMoon className="w-5 h-5" />}
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-[#0F172A] dark:text-[#F8FAFC] focus:outline-none"
+              aria-label="Toggle Navigation Menu"
             >
               {isOpen ? <HiX className="w-7 h-7" /> : <HiMenu className="w-7 h-7" />}
             </button>
@@ -106,7 +108,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Drawer Navigation overlay */}
       {isOpen && (
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -120,7 +122,7 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block px-3 py-2 text-base font-medium text-[#0F172A] dark:text-[#F8FAFC] hover:bg-black/5 dark:hover:bg-white/10 rounded-md"
+                className="block px-3 py-2 text-base font-medium text-[#0F172A] dark:text-[#F8FAFC] hover:bg-black/5 dark:hover:bg-white/10 hover:text-[#0EA5E9] rounded-md transition-colors"
               >
                 {link.name}
               </a>
@@ -128,7 +130,7 @@ const Navbar = () => {
             <a
               href="#donate"
               onClick={() => setIsOpen(false)}
-              className="block w-full text-center mt-4 bg-[#FF7F6A] text-white px-6 py-3 rounded-md font-semibold"
+              className="block w-full text-center mt-4 bg-[#F97316] hover:bg-[#ea580c] text-white px-6 py-3 rounded-full font-semibold transition-colors"
             >
               Donate Now
             </a>

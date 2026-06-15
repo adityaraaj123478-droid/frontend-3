@@ -16,12 +16,12 @@ const StorySection = () => {
         className="absolute inset-0 w-full h-[120%] -top-[10%]"
       >
         <img
-          src="/story_bg.png"
-          alt="Empowered Woman"
-          className="w-full h-full object-cover opacity-30"
+          src="/story_bg.png" /* Tip: Consider updating this background image in your public directory to match your focus */
+          alt="Youth Empowerment"
+          className="w-full h-full object-cover opacity-25"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A] via-[#0F172A]/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A] via-[#0F172A]/85 to-transparent"></div>
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -32,29 +32,30 @@ const StorySection = () => {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8 }}
           >
-            <div className="w-16 h-1 bg-[#FF7F6A] mb-8 rounded-full"></div>
+            {/* Top Border Accent Line */}
+            <div className="w-16 h-1 bg-[#F97316] mb-8 rounded-full"></div>
 
             <h2 className="text-3xl md:text-5xl font-poppins font-bold text-white mb-6 leading-tight">
-              "When women rise,{' '}
-              <span className="text-[#14B8A6]">communities</span> grow stronger."
+              "The main hope of a nation lies in the{' '}
+              <span className="text-[#0EA5E9]">arms of its youth</span>."
             </h2>
 
-            <p className="text-gray-300 text-lg md:text-xl font-inter leading-relaxed mb-8 italic border-l-4 border-[#14B8A6] pl-6">
-              Amina was once a marginalized artisan in her village. Through the
-              She Can skill development program, she not only mastered modern
-              design techniques but also learned how to manage a business.
-              Today, she employs 15 other women and her products are sold
-              nationwide.
+            <p className="text-gray-300 text-lg md:text-xl font-inter leading-relaxed mb-8 italic border-l-4 border-[#0EA5E9] pl-6">
+              In the grim shadows of 2020, we started off as a small bunch of 
+              high schoolers with nothing but hope and a strong urge to make an impact. 
+              Today, we have evolved into a massive team of driven individuals spanning across 
+              the city and state—proving that the youth can step up to bridge the gaps in society 
+              and truly become 'Badalte Bharat Ki Nayi Tasveer'.
             </p>
 
-            {/* Founder Info Without Image */}
+            {/* NGO Meta / Motto Focus */}
             <div>
-              <p className="text-[#FF7F6A] font-semibold font-poppins tracking-[0.2em] uppercase">
-                Reeta Mishra
+              <p className="text-[#F97316] font-semibold font-poppins tracking-[0.2em] uppercase">
+                NayePankh Foundation
               </p>
 
-              <p className="text-white text-sm">
-                Founder & President, She Can Foundation
+              <p className="text-gray-400 text-sm mt-1">
+                A 12A & 80G Certified Youth-Led Initiative
               </p>
             </div>
 
@@ -63,7 +64,7 @@ const StorySection = () => {
               whileTap={{ scale: 0.95 }}
               className="mt-10 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 px-8 py-3 rounded-full font-semibold transition-all duration-300"
             >
-              Read More Stories
+              Our Journey So Far
             </motion.button>
           </motion.div>
         </div>

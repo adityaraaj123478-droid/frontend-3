@@ -1,38 +1,38 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiBook, FiTool, FiActivity, FiBriefcase, FiGlobe, FiAward, FiArrowRight } from 'react-icons/fi';
+import { FiBookOpen, FiCoffee, FiHeart, FiSmile, FiUsers, FiArrowRight, FiShoppingBag } from 'react-icons/fi';
 
 const Programs = () => {
   const programs = [
     {
-      title: "Women Education",
-      desc: "Comprehensive educational support including scholarships, school supplies, and adult literacy programs.",
-      icon: <FiBook className="w-8 h-8" />,
+      title: "Food Distribution",
+      desc: "Fighting hunger at the grassroots level by distributing fresh, nutritious meals to underprivileged communities across the society.",
+      icon: <FiCoffee className="w-8 h-8" />,
     },
     {
-      title: "Skill Development",
-      desc: "Vocational training in technology, tailoring, and business management to foster financial independence.",
-      icon: <FiTool className="w-8 h-8" />,
+      title: "Menstrual Hygiene Awareness",
+      desc: "Breaking social taboos by conducting awareness campaigns and providing sanitary napkins to young women to preserve health and dignity.",
+      icon: <FiHeart className="w-8 h-8" />,
     },
     {
-      title: "Healthcare Support",
-      desc: "Free medical camps, hygiene awareness, and maternal health support for underserved communities.",
-      icon: <FiActivity className="w-8 h-8" />,
+      title: "Clothing Drives",
+      desc: "Collecting and safely distributing clean, reliable clothing items to impoverished families protection against changing seasons.",
+      icon: <FiShoppingBag className="w-8 h-8" />, 
     },
     {
-      title: "Career Guidance",
-      desc: "Mentorship programs and career counseling to help women navigate the professional world.",
-      icon: <FiBriefcase className="w-8 h-8" />,
+      title: "Underprivileged Education",
+      desc: "Providing fundamental educational support and teaching youth sectors directly to pave a path toward a self-reliant and better future.",
+      icon: <FiBookOpen className="w-8 h-8" />,
     },
     {
-      title: "Community Outreach",
-      desc: "Grassroots initiatives aimed at solving local problems through collaborative efforts.",
-      icon: <FiGlobe className="w-8 h-8" />,
+      title: "Stray Animal Welfare",
+      desc: "Extending our care framework to all living creatures by running consistent feeding drives for stray animals in local neighborhoods.",
+      icon: <FiSmile className="w-8 h-8" />, 
     },
     {
-      title: "Leadership Workshops",
-      desc: "Empowering women with leadership skills to take charge in their communities and workplaces.",
-      icon: <FiAward className="w-8 h-8" />,
+      title: "Youth Mobilization",
+      desc: "Empowering high schoolers and college students to take immediate field roles, leading active social change across cities and states.",
+      icon: <FiUsers className="w-8 h-8" />,
     }
   ];
 
@@ -59,7 +59,7 @@ const Programs = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-sm font-semibold tracking-wider text-[#FF7F6A] uppercase mb-2"
+            className="text-sm font-semibold tracking-wider text-[#F97316] uppercase mb-2"
           >
             What We Do
           </motion.h2>
@@ -70,7 +70,7 @@ const Programs = () => {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl font-poppins font-bold text-[#0F172A] dark:text-white mb-6"
           >
-            Our Core <span className="text-[#14B8A6]">Programs</span>
+            Our Core <span className="text-[#0EA5E9]">Initiatives</span>
           </motion.h3>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -79,7 +79,7 @@ const Programs = () => {
             transition={{ delay: 0.2 }}
             className="text-gray-600 dark:text-gray-300 text-lg"
           >
-            We implement comprehensive solutions designed to address the root causes of inequality and provide stepping stones for lasting success.
+            We are dedicated to resolving daily operational challenges faced by common citizens of India, making this earth a safer home for all creatures.
           </motion.p>
         </div>
 
@@ -96,15 +96,14 @@ const Programs = () => {
               variants={itemVariants}
               className="group relative bg-white dark:bg-[#0F172A] p-8 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-white/5 overflow-hidden"
             >
-              {/* Hover background effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#14B8A6]/5 to-[#FF7F6A]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#0EA5E9]/5 to-[#F97316]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
               <div className="relative z-10">
-                <div className="w-16 h-16 rounded-2xl bg-[#F8FAFC] dark:bg-[#1e293b] flex items-center justify-center text-[#14B8A6] group-hover:text-white group-hover:bg-[#FF7F6A] transition-colors duration-300 mb-6 shadow-sm">
+                <div className="w-16 h-16 rounded-2xl bg-[#F8FAFC] dark:bg-[#1e293b] flex items-center justify-center text-[#0EA5E9] group-hover:text-white group-hover:bg-[#F97316] transition-colors duration-300 mb-6 shadow-sm">
                   {prog.icon}
                 </div>
                 
-                <h4 className="text-xl font-bold font-poppins text-[#0F172A] dark:text-white mb-4 group-hover:text-[#14B8A6] transition-colors duration-300">
+                <h4 className="text-xl font-bold font-poppins text-[#0F172A] dark:text-white mb-4 group-hover:text-[#0EA5E9] transition-colors duration-300">
                   {prog.title}
                 </h4>
                 
@@ -112,8 +111,8 @@ const Programs = () => {
                   {prog.desc}
                 </p>
                 
-                <a href="#contact" className="inline-flex items-center gap-2 text-[#FF7F6A] font-semibold text-sm group-hover:gap-3 transition-all duration-300">
-                  Learn more <FiArrowRight />
+                <a href="#contact" className="inline-flex items-center gap-2 text-[#F97316] font-semibold text-sm group-hover:gap-3 transition-all duration-300">
+                  Support this cause <FiArrowRight />
                 </a>
               </div>
             </motion.div>
